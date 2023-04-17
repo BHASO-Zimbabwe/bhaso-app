@@ -1,3 +1,5 @@
+
+import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +26,11 @@ class MyApp extends StatelessWidget {
       textTheme: textTheme,
       fontFamily: 'Poppins',
       primaryColor: Colors.green
+        primarySwatch: Colors.blue,
       ),
-      home: const OnboardingScreen(),
+      home: SplashScreen(),
+      
+      ),
     );
   }
 }
