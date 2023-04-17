@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'onboardingOne.dart';
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(Duration(seconds: 3),
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
-                (context)=>   OnboardingOne()
+                (context)=>   OnboardingScreen()
             )
         )
     );
@@ -36,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
         children:  const [
           SizedBox(height: 39,),
 
-          Center(child: Image(image: AssetImage("images/bhasoLogo.png"),
+          Center(child: Image(image: AssetImage("assets/images/bhasoLogo.png"),
           height: 100,
           width: 250,)
           )
