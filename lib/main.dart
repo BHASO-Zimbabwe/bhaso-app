@@ -1,4 +1,5 @@
 import 'package:bhaso/features/onboarding/onboard.dart';
+import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/onboarding.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       fontFamily: 'Poppins',
       primaryColor: Colors.green
       ),
-      home: const Onboarding_Page(),
+      home: const OnboardingScreen(),
     );
   }
 }
