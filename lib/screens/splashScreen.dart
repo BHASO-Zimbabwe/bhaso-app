@@ -32,21 +32,30 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: const Color(0xFF2E7D32),
-      body:   Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children:  const [
-          SizedBox(height: 39,),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/overlay.png"),
+          fit: BoxFit.cover,
 
-          Center(child: Image(image: AssetImage("assets/images/bhasoLogo.png"),
-          height: 100,
-          width: 250,)
-          )
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:  const [
+            SizedBox(height: 39,),
+
+            Center(child: Image(image: AssetImage("assets/images/bhasoLogo.png"),
+              height: 100,
+              width: 250,)
+            )
 
 
 
 
-        ],
-      ),
+          ],
+        ),
+      )
 
     );
   }
