@@ -1,3 +1,4 @@
+import 'package:bhaso/features/menu/menu.dart';
 import 'package:bhaso/features/utils/colors_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -118,7 +119,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           Padding(
                               padding: const EdgeInsets.all(10),
                               child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Menu_Page()));
+
+                                },
                                 child: const Text("Login",style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, ),),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: BhasoColors.primary,
@@ -138,7 +142,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           Padding(
                             padding: const EdgeInsets.all(10),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Menu_Page()));
+                              },
                               child: const Text("Signup", style: TextStyle(color: Colors.green, fontSize: 14,fontWeight: FontWeight.w500),),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
