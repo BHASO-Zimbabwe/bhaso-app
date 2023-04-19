@@ -31,6 +31,8 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                       fontWeight: FontWeight.w500
                   ),)),
               ),
+               SizedBox(height: 39),
+
 
             ],
           ),
@@ -42,6 +44,8 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
               backgroundImage: AssetImage("assets/images/headshot.jpg"),
             ),
           ),
+
+
 
 
         ],
