@@ -11,6 +11,15 @@ class ChangePassword extends StatefulWidget {
 class _ChangePasswordState extends State<ChangePassword> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(11.0),
+        child: Column(
+          children: [
+
+          ],
+        ),
+      ),
+    );
   }
 }

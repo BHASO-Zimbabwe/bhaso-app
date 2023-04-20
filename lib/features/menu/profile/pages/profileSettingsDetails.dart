@@ -36,20 +36,19 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                 icon: Icon(Icons.arrow_back_ios,color: Colors.black,), onPressed: () {
                   Navigator.pop(context);
               },),
+               SizedBox(width: 89),
 
 
-              const Align(
-                  child: Text("Profile",
+               const Text("Profile",
                       style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w500
-                      ),)),
-
-    // SizedBox(height: 39),
-
+                      ),)
 
             ],
           ),
+          SizedBox(height: 25),
+
           const CircleAvatar(
             radius: 60,
             backgroundColor: BhasoColors.textColor,
