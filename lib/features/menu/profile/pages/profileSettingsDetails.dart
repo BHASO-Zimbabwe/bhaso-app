@@ -20,8 +20,10 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const IconButton(onPressed: null,
-                icon: Icon(Icons.arrow_back_ios,color: Colors.black,),),
+               IconButton(
+                icon: Icon(Icons.arrow_back_ios,color: Colors.black,), onPressed: () {
+                  Navigator.pop(context);
+              },),
 
 
               Center(
