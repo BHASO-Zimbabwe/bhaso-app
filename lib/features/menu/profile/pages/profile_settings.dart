@@ -22,15 +22,19 @@ class ProfileSettings extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const IconButton(onPressed: null,
+               IconButton(onPressed: (){
+                 Navigator.pop(context);
+               },
                 icon: Icon(Icons.arrow_back_ios,color: Colors.black,),),
 
 
-              Title(color: Colors.black, child: const Text("Profile",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500
-                ),)),
+              Expanded(
+                child: Title(color: Colors.black, child: const Text("Profile",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w500,
+                  ),)),
+              ),
 
 
             ],
@@ -54,7 +58,7 @@ class ProfileSettings extends StatelessWidget {
           //the options
           // //to appointments page
           ListTile(
-            title: const Text("Appointmments",
+            title: const Text("Appointments",
 
               style: TextStyle(
                   fontSize: 21
