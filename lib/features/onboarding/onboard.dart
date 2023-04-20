@@ -287,3 +287,25 @@
 //     );
 //   }
 // }
+
+/*
+Column(
+mainAxisAlignment: MainAxisAlignment.center,
+children:  const [
+SizedBox(height: 39,),
+
+Center(child: Image(image: AssetImage("assets/images/bhasoLogo.png"),
+height: 100,
+width: 250,)
+)
+
+
+
+
+],
+),
+*/
+
+
+
+

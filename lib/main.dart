@@ -3,6 +3,8 @@ import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'features/menu/profile/pages/profile_settings.dart';
 // import 'package:onboarding/onboarding.dart';
 
 void main() {
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
       fontFamily: 'Poppins',
       primaryColor: Colors.green
       ),
-      home: SplashScreen(),
+      home: ProfileSettings(),
     );
   }
 }
