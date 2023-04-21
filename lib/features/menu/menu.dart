@@ -1,9 +1,10 @@
 import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
-import 'package:bhaso/features/utils/colors_constants.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/fontsAndColors_constants.dart';
 import 'notification/pages/notification.dart';
 
 class Menu_Page extends StatefulWidget {
