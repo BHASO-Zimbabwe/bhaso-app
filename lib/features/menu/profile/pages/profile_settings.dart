@@ -1,6 +1,6 @@
 
 import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
-import 'package:bhaso/features/menu/profile/pages/reportIssue.dart';
+import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
 import 'package:flutter/material.dart';
 
 
@@ -136,7 +136,7 @@ class ProfileSettings extends StatelessWidget {
 
             onTap: (){
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=> const ReportIssues())
+                  MaterialPageRoute(builder: (context)=>  ReportIssues())
               );
             },
             trailing: const Icon(Icons.arrow_forward_ios_outlined,size: 20,),
