@@ -136,7 +136,7 @@ class ProfileSettings extends StatelessWidget {
 
             onTap: (){
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=> const ReportIssues())
+                  MaterialPageRoute(builder: (context)=>  ReportIssues())
               );
             },
             trailing: const Icon(Icons.arrow_forward_ios_outlined,size: 20,),
