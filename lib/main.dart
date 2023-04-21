@@ -1,5 +1,9 @@
 
 import 'package:bhaso/features/menu/appearance/pages/appearance.dart';
+import 'package:bhaso/features/menu/menu.dart';
+import 'package:bhaso/features/menu/notification/pages/notification.dart';
+import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
+import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
       fontFamily: 'Poppins',
       primaryColor: Colors.green
       ),
-      home: AppearancePage(),
+      home: ProfileSettingsDetails(),
     );
   }
 }
