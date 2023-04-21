@@ -1,5 +1,6 @@
 import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
-import 'package:bhaso/features/utils/fontsAndColors_constants.dart';
+import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
+import 'package:bhaso/features/utils/colors_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -134,6 +135,8 @@ class _Menu_PageState extends State<Menu_Page> {
                       selected = 4;
                     });
                     Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ReportIssues()));
+
                   },
                 ),
               ),

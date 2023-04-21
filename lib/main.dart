@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       fontFamily: 'Poppins',
       primaryColor: Colors.green
       ),
-      home: ProfileSettingsDetails(),
+      home: const OnboardingScreen(),
     );
   }
 }
