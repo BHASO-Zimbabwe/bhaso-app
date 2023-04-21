@@ -80,7 +80,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
 
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
            const Text("Gender",
             style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
 
@@ -99,7 +99,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         RadioListTile(
-                          title: Text('Male'),
+                          title: const Text('Male'),
                           value: 1,
                           groupValue: selectedValue,
                           onChanged: (value) {
@@ -109,7 +109,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                           },
                         ),
                         RadioListTile(
-                          title: Text('Female'),
+                          title: const Text('Female'),
                           value: 2,
                           groupValue: selectedValue,
                           onChanged: (value) {
@@ -125,7 +125,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                 )
               ]
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
 
            const Text("Email",
             style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
@@ -165,7 +165,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
             ),
             ignoreBlank: false,
             autoValidateMode: AutovalidateMode.disabled,
-            selectorTextStyle: TextStyle(color: Colors.black),
+            selectorTextStyle: const TextStyle(color: Colors.black),
             initialValue: number,
             textFieldController: controller,
             formatInput: true,
@@ -204,7 +204,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
           Container(
             alignment: Alignment.topLeft,
             child: TextButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangePassword()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const ChangePassword()));
             } , child: const Text("Change Password",style:
             TextStyle( fontWeight: FontWeight.w400,fontSize: 19,color: BhasoColors.secondary)
             )
@@ -216,7 +216,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF33691E),
+              backgroundColor: const Color(0xFF33691E),
               minimumSize: const Size(290, 70),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(13),
