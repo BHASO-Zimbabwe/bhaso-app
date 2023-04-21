@@ -1,6 +1,6 @@
 
 import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
-import 'package:bhaso/features/menu/profile/pages/reportIssue.dart';
+import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
 import 'package:flutter/material.dart';
 
 
