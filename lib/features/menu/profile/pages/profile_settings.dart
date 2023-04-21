@@ -4,7 +4,7 @@ import 'package:bhaso/features/menu/profile/pages/reportIssue.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../../utils/colors_constants.dart';
+import '../../../utils/fontsAndColors_constants.dart';
 import 'appointments.dart';
 import 'caregiver.dart';
 import 'medications.dart';

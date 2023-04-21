@@ -1,7 +1,7 @@
 import 'package:bhaso/features/menu/profile/pages/changePassword.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/colors_constants.dart';
+import '../../../utils/fontsAndColors_constants.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 
@@ -60,9 +60,9 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
           SizedBox(height: 25),
 
 
-          Title(color: Colors.black, child: const Text("Username",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+          const Text("Username",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Container(
             decoration: BoxDecoration(
@@ -81,9 +81,9 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
             ),
           ),
           SizedBox(height: 5),
-          Title(color: Colors.black, child: const Text("Gender",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+           const Text("Gender",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -127,9 +127,9 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
           ),
           SizedBox(height: 5),
 
-          Title(color: Colors.black, child: const Text("Email",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+           const Text("Email",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Container(
             decoration: BoxDecoration(
@@ -179,9 +179,9 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
 
           const SizedBox(height: 11),
 
-          Title(color: Colors.black, child: const Text("Password",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+           const Text("Password",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Container(
             decoration: BoxDecoration(
