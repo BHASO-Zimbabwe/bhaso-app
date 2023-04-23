@@ -1,7 +1,7 @@
 import 'package:bhaso/features/menu/profile/pages/changePassword.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/colors_constants.dart';
+import '../../../utils/fontsAndColors_constants.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 
@@ -60,9 +60,9 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
           SizedBox(height: 25),
 
 
-          Title(color: Colors.black, child: const Text("Username",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+          const Text("Username",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Container(
             decoration: BoxDecoration(
@@ -80,10 +80,10 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
 
             ),
           ),
-          SizedBox(height: 5),
-          Title(color: Colors.black, child: const Text("Gender",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+          const SizedBox(height: 5),
+           const Text("Gender",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +99,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         RadioListTile(
-                          title: Text('Male'),
+                          title: const Text('Male'),
                           value: 1,
                           groupValue: selectedValue,
                           onChanged: (value) {
@@ -109,7 +109,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                           },
                         ),
                         RadioListTile(
-                          title: Text('Female'),
+                          title: const Text('Female'),
                           value: 2,
                           groupValue: selectedValue,
                           onChanged: (value) {
@@ -125,11 +125,11 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
                 )
               ]
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
 
-          Title(color: Colors.black, child: const Text("Email",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+           const Text("Email",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Container(
             decoration: BoxDecoration(
@@ -153,35 +153,36 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
           ),
 
           InternationalPhoneNumberInput(onInputChanged: (PhoneNumber number){
-            print(number.phoneNumber);
+              print(number.phoneNumber);
 
-          },
-            onInputValidated: (bool value) {
-              print(value);
             },
+              onInputValidated: (bool value) {
+                print(value);
+              },
 
-            selectorConfig: const SelectorConfig(
-              selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+              selectorConfig: const SelectorConfig(
+                selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+              ),
+              ignoreBlank: false,
+              autoValidateMode: AutovalidateMode.disabled,
+              selectorTextStyle: const TextStyle(color: Colors.black),
+              initialValue: number,
+              textFieldController: controller,
+              formatInput: true,
+              keyboardType:
+              const TextInputType.numberWithOptions(signed: true, decimal: true),
+              inputBorder: OutlineInputBorder(),
+              onSaved: (PhoneNumber number) {
+                print('On Saved: $number');
+              },
             ),
-            ignoreBlank: false,
-            autoValidateMode: AutovalidateMode.disabled,
-            selectorTextStyle: TextStyle(color: Colors.black),
-            initialValue: number,
-            textFieldController: controller,
-            formatInput: true,
-            keyboardType:
-            const TextInputType.numberWithOptions(signed: true, decimal: true),
-            inputBorder: OutlineInputBorder(),
-            onSaved: (PhoneNumber number) {
-              print('On Saved: $number');
-            },
-          ),
+
 
           const SizedBox(height: 11),
 
-          Title(color: Colors.black, child: const Text("Password",
-            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),)
-          ),
+           const Text("Password",
+            style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+
 
           Container(
             decoration: BoxDecoration(
@@ -204,7 +205,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
           Container(
             alignment: Alignment.topLeft,
             child: TextButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangePassword()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const ChangePassword()));
             } , child: const Text("Change Password",style:
             TextStyle( fontWeight: FontWeight.w400,fontSize: 19,color: BhasoColors.secondary)
             )
@@ -216,7 +217,7 @@ class _ProfileSettingsDetailsState extends State<ProfileSettingsDetails> {
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF33691E),
+              backgroundColor: const Color(0xFF33691E),
               minimumSize: const Size(290, 70),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(13),
