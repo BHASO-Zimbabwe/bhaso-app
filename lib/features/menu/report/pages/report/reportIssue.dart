@@ -1,3 +1,4 @@
+import 'package:bhaso/features/menu/report/pages/report/success_report.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -185,7 +186,10 @@ class _ReportIssuesState extends State<ReportIssues> {
                             borderRadius: BorderRadius.circular(13),
                           ),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Success_Page()));
+
+                        },
 
                         child: const Text(
                           "Report Issue", style: TextStyle(
