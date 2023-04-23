@@ -13,18 +13,18 @@ class OnboardingContents {
 List<OnboardingContents> contents = [
   OnboardingContents(
     title: "Track medication",
-    image: "assets/images/amico.svg",
+    image: "assets/images/amico.png",
     desc: "You no longer need to worry about getting the right help, we give you access to the best hands",
   ),
   OnboardingContents(
     title: "Get Reminders",
-    image: "assets/images/amico2.svg",
+    image: "assets/images/amico2.png",
     desc:
         "You no longer need to worry about getting the right help, we give you access to the best hands",
   ),
   OnboardingContents(
     title: "Unlimited Access to caregivers",
-    image: "assets/images/pana.svg",
+    image: "assets/images/pana.png",
     desc:
         "You no longer need to worry about getting the right help, we give you access to the best hands",
   ),

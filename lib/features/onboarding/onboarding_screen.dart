@@ -54,7 +54,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 50,),
             Expanded(
               flex: 2,
               child: PageView.builder(
@@ -67,11 +66,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     padding: const EdgeInsets.all(30.0),
                     child: Column(
                       children: [
-                        SvgPicture.asset(contents[i].image,height: SizeConfig.blockV! * 30,),
-                        // Image.asset(
-                        //   contents[i].image,
-                        //   height: SizeConfig.blockV! * 35,
-                        // ),
+                        Image.asset(
+                          contents[i].image,
+                          height: SizeConfig.blockV! * 35,
+                        ),
                         SizedBox(
                           height: (height >= 840) ? 60 : 30,
                         ),
@@ -82,7 +80,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             fontFamily: "Poppins",
                             fontWeight: FontWeight.w500,
                             color: BhasoColors.primary,
-                            fontSize: (width <= 550) ? 19 : 35,
+                            fontSize: (width <= 550) ? 20 : 35,
                           ),
                         ),
                         const SizedBox(height: 15),
@@ -142,7 +140,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               ),
                             ),
                           Padding(
-                            padding: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(10),
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => Menu_Page()));
@@ -157,7 +155,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 ),
                                 padding: (width <= 550)
                                     ? const EdgeInsets.symmetric(
-                                    horizontal: 150, vertical: 13)
+                                    horizontal: 150, vertical: 15)
                                     : EdgeInsets.symmetric(
                                     horizontal: width * 0.2, vertical: 25),
                                 textStyle:
