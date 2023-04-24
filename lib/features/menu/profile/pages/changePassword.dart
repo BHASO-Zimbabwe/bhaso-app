@@ -194,7 +194,7 @@ class _ChangePasswordState extends State<ChangePassword> {
 
                   ),
 
-                  const Text("Minimun of 8 characters",
+                  const Text("Minimum of 8 characters",
                     style: TextStyle(
                         height: 1.5,
                         fontWeight: FontWeight.w500,
