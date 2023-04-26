@@ -1,10 +1,10 @@
 
 import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
-import 'package:bhaso/features/menu/profile/pages/reportIssue.dart';
 import 'package:flutter/material.dart';
 
 
 import '../../../utils/fontsAndColors_constants.dart';
+import '../../report/pages/report/reportIssue.dart';
 import 'appointments.dart';
 import 'caregiver.dart';
 import 'medications.dart';
@@ -17,7 +17,7 @@ class ProfileSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: const EdgeInsets.only(left: 9,right: 5,top: 50),
+        padding: const EdgeInsets.only(left: 12,right: 6,top: 50),
 
         children:  [
           Row(
@@ -28,14 +28,15 @@ class ProfileSettings extends StatelessWidget {
                },
                 icon: Icon(Icons.arrow_back_ios,color: Colors.black,),),
 
+              SizedBox(width: 89,),
 
-              Expanded(
-                child: Title(color: Colors.black, child: const Text("Profile",
+
+              Title(color: Colors.black, child: const Text("Profile",
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w500,
                   ),)),
-              ),
+
 
 
             ],
@@ -153,7 +154,7 @@ class ProfileSettings extends StatelessWidget {
 
               Text("Logout",
               style: TextStyle(
-                fontSize: 16
+                fontSize: 21
 
               ),)
 
