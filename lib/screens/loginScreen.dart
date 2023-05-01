@@ -209,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 5,),
+                      SizedBox(width: 5),
                       SizedBox(
                         width: 150,
                         child: TextButton(
@@ -219,7 +219,7 @@ class _LoginPageState extends State<LoginPage> {
                               radius: 12,
                               backgroundImage: AssetImage("assets/images/facebook.png"),
                             ),
-                            // minLeadingWidth: 11,
+                            
 
                             trailing: Text("Facebook",style: TextStyle(fontSize: 14)),
                           ),
