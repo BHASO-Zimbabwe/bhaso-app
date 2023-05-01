@@ -3,7 +3,8 @@ import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
 import 'package:flutter/material.dart';
 
 
-import '../../../utils/fontsAndColors_constants.dart';
+import '../../../utils/fontsAndColors.dart';
+
 import '../../report/pages/report/reportIssue.dart';
 import 'appointments.dart';
 import 'caregiver.dart';
