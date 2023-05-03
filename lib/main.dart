@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
 
 import 'features/diary/pages/add_note.dart';
+import 'features/diary/pages/diary.dart';
 // import 'package:onboarding/onboarding.dart';
 
 void main() {
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
       primaryColor: Colors.green
       ),
 
-      home: DairyAddPage(),
+      home: Diary_Page(),
     );
   }
 }
