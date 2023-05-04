@@ -219,7 +219,7 @@ class _LoginPageState extends State<LoginPage> {
                               radius: 12,
                               backgroundImage: AssetImage("assets/images/facebook.png"),
                             ),
-                            
+
 
                             trailing: Text("Facebook",style: TextStyle(fontSize: 14)),
                           ),

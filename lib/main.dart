@@ -6,13 +6,15 @@ import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
 import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/features/menu/report/pages/report/success_report.dart';
 import 'package:bhaso/features/menu/settings/pages/settings.dart';
-import 'package:bhaso/screens/loginScreen.dart';
 import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
+
+import 'features/diary/pages/add_note.dart';
+import 'features/diary/pages/diary.dart';
 // import 'package:onboarding/onboarding.dart';
 
 void main() {
@@ -37,7 +39,8 @@ class MyApp extends StatelessWidget {
       fontFamily: 'Poppins',
       primaryColor: Colors.green
       ),
-      home: LoginPage(),
+
+      home: Diary_Page(),
     );
   }
 }

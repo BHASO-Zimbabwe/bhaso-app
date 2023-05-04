@@ -80,7 +80,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             fontFamily: "Poppins",
                             fontWeight: FontWeight.w500,
                             color: BhasoColors.primary,
-                            fontSize: (width <= 550) ? 20 : 35,
+                            fontSize: (width <= 550) ? 19 : 35,
                           ),
                         ),
                         const SizedBox(height: 15),

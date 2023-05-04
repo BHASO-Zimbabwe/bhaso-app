@@ -1,5 +1,7 @@
 
 import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
+
+import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
 import 'package:flutter/material.dart';
 
 
@@ -21,39 +23,46 @@ class ProfileSettings extends StatelessWidget {
         padding: const EdgeInsets.only(left: 12,right: 6,top: 50),
 
         children:  [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-               IconButton(onPressed: (){
-                 Navigator.pop(context);
-               },
-                icon: Icon(Icons.arrow_back_ios,color: Colors.black,),),
 
-              SizedBox(width: 89,),
-
-
-              Title(color: Colors.black, child: const Text("Profile",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                  ),)),
+            Container(
+              padding: EdgeInsets.fromLTRB(0, 0, 60, 0),
+              child: Row(
+                children: [
+                   IconButton(onPressed: (){
+                     Navigator.pop(context);
+                   },
+                    icon: Icon(Icons.arrow_back_ios,color: Colors.black,),),
 
 
 
-            ],
+                  Expanded(
+
+                      child: Title(color: Colors.black, child: const Text("Profile",textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                        ),)),
+                    ),
+
+
+                ],
+
+
           ),
+            ),
           const CircleAvatar(
-            radius: 60,
+            radius: 50,
             backgroundColor: BhasoColors.textColor,
             child: CircleAvatar(
-              radius: 55,
+              radius: 42,
               backgroundImage: AssetImage("assets/images/headshot.jpg"),
             ),
           ),
+          SizedBox(height: 20),
           const Center(
             child: Text("Khanya Toluwa",
             style: TextStyle(
-              fontSize: 25
+              fontSize: 20
             ),),
           ),
           const SizedBox(height: 20),
@@ -64,7 +73,7 @@ class ProfileSettings extends StatelessWidget {
             title: const Text("Appointments",
 
               style: TextStyle(
-                  fontSize: 21
+                  fontSize: 19
 
               ),),
             //to appointmments page
@@ -80,7 +89,7 @@ class ProfileSettings extends StatelessWidget {
           ListTile(
             title: const Text("Caregiver",
               style: TextStyle(
-                  fontSize: 21
+                  fontSize: 19
 
               ),),
             onTap: (){
@@ -98,7 +107,7 @@ class ProfileSettings extends StatelessWidget {
           ListTile(
             title: const Text("Medications",
               style: TextStyle(
-                  fontSize: 21
+                  fontSize: 19
 
               ),),
 
@@ -115,7 +124,7 @@ class ProfileSettings extends StatelessWidget {
           ListTile(
             title: const Text("Profile Settings",
               style: TextStyle(
-                  fontSize: 21
+                  fontSize: 19
 
               ),),
 
@@ -131,7 +140,7 @@ class ProfileSettings extends StatelessWidget {
           ListTile(
             title: const Text("Report Issues",
               style: TextStyle(
-                  fontSize: 21
+                  fontSize: 19
 
 
               ),),

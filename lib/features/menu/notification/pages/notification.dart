@@ -154,7 +154,7 @@ class _NotificationPageState extends State<NotificationPage> {
                               children: [
                                 Container(
                                     padding: const EdgeInsets.all(4.0),
-                                    width: MediaQuery.of(context).size.width * 0.6,
+                                    width: MediaQuery.of(context).size.width * 0.5,
 
                                     child: const Text('Receive messages on your mobile devices or smart devices',
                                         textAlign: TextAlign.left,
@@ -280,7 +280,7 @@ class _NotificationPageState extends State<NotificationPage> {
                           children: [
                             Container(
                                 padding: const EdgeInsets.all(4.0),
-                                width: MediaQuery.of(context).size.width * 0.6,
+                                width: MediaQuery.of(context).size.width * 0.5,
 
                                 child: const Text('Receive messages on your mobile devices or smart devices',
                                     textAlign: TextAlign.left,
@@ -433,7 +433,7 @@ class _NotificationPageState extends State<NotificationPage> {
                           children: [
                             Container(
                                 padding: const EdgeInsets.all(4.0),
-                                width: MediaQuery.of(context).size.width * 0.6,
+                                width: MediaQuery.of(context).size.width * 0.5,
 
                                 child: const Text('Receive messages on your mobile devices or smart devices',
                                     textAlign: TextAlign.left,
