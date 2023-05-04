@@ -129,7 +129,6 @@ class _LoginPageState extends State<LoginPage> {
                             suffixIcon: IconButton(
                                 onPressed: (){
                                   setState(() {
-
                                     obscurePassword = !obscurePassword;
                                   });
 
@@ -147,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
                           )
 
                       ),
-                    ), SizedBox(height: 28,),
+                    ), SizedBox(height: 29,),
 
 
 
