@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../utils/fontsAndColors_constants.dart';
+
+import '../../utils/fontsAndColors.dart';
 import 'add_note.dart';
 
 class Diary_Page extends StatelessWidget {

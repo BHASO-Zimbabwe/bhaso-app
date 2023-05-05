@@ -1,7 +1,7 @@
 import 'package:bhaso/features/menu/profile/pages/changePassword.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/fontsAndColors_constants.dart';
+import '../../../utils/fontsAndColors.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 

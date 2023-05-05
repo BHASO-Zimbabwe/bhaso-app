@@ -6,6 +6,7 @@ import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
 import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/features/menu/report/pages/report/success_report.dart';
 import 'package:bhaso/features/menu/settings/pages/settings.dart';
+import 'package:bhaso/screens/loginScreen.dart';
 import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
@@ -23,7 +24,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
-  final TextTheme textTheme = TextTheme(
+  final TextTheme textTheme = const TextTheme(
     headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold, fontFamily: 'Poppins'),
     headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic, fontFamily: 'Poppins'),
     bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Poppins'),
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
       primaryColor: Colors.green
       ),
 
-      home: Diary_Page(),
+      home: LoginPage(),
     );
   }
 }

@@ -1,6 +1,8 @@
-import 'package:bhaso/features/utils/fontsAndColors_constants.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+
+import '../../../utils/fontsAndColors.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);

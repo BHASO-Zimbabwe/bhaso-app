@@ -1,8 +1,9 @@
 import 'package:bhaso/features/diary/pages/diary.dart';
-import 'package:bhaso/features/utils/fontsAndColors_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../utils/fontsAndColors.dart';
 
 class DairyAddPage extends StatelessWidget {
   const DairyAddPage({Key? key}) : super(key: key);

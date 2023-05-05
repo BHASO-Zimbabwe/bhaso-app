@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/fontsAndColors_constants.dart';
-
+import '../../../utils/fontsAndColors.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({Key? key}) : super(key: key);
