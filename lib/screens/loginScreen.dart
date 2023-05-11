@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/fontsAndColors.dart';
+import '../features/utils/fontsAndColors.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -194,38 +194,60 @@ class _LoginPageState extends State<LoginPage> {
 
                 Wrap(
                     children: [
-                      SizedBox(
+                      Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: BhasoColors.invisible,
+
+                            borderRadius: BorderRadius.circular(10)
+                        ),
                         width: 150,
                         child: TextButton(
                           onPressed: (){},
 
-                          child: const ListTile(
-                            leading: CircleAvatar(
-                              radius: 15,
-                              backgroundImage: AssetImage("assets/images/google.png")),
-                              // minLeadingWidth: 11,
-                            trailing: Text('Google',style: TextStyle(fontSize: 14),),
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                  radius: 15,
+                                  backgroundImage: AssetImage("assets/images/google.png")
+                              ),
+                           Text('Google',style: TextStyle(fontSize: 14))
+                            ],                          // minLeadingWidth: 11,
+
                           ),
                         ),
                       ),
                       SizedBox(width: 5),
-                      SizedBox(
+                      Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: BhasoColors.invisible,
+
+                            borderRadius: BorderRadius.circular(10)
+                        ),
                         width: 150,
                         child: TextButton(
                           onPressed: (){},
-                          child: const ListTile(
-                            leading: CircleAvatar(
-                              radius: 12,
-                              backgroundImage: AssetImage("assets/images/facebook.png"),
-                            ),
+                          child:
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                radius: 12,
+                                backgroundImage: AssetImage("assets/images/facebook.png"),
+                              ),
+                              Text("Facebook",style: TextStyle(fontSize: 14))
+                            ],
 
 
-                            trailing: Text("Facebook",style: TextStyle(fontSize: 14)),
+
                           ),
                         ),
                       ),
                     ],
                   ),
+                    SizedBox(
+                      height: 20,
+                    ),
 
                     // const SizedBox(width: 20),
 
