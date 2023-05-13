@@ -201,11 +201,12 @@ class _LoginPageState extends State<LoginPage> {
 
                             borderRadius: BorderRadius.circular(10)
                         ),
-                        width: 150,
+                        width: 130,
                         child: TextButton(
                           onPressed: (){},
 
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               CircleAvatar(
                                   radius: 15,
@@ -217,7 +218,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 5),
+                      SizedBox(width: 11),
                       Container(
                         height: 40,
                         decoration: BoxDecoration(
@@ -225,11 +226,12 @@ class _LoginPageState extends State<LoginPage> {
 
                             borderRadius: BorderRadius.circular(10)
                         ),
-                        width: 150,
+                        width: 130,
                         child: TextButton(
                           onPressed: (){},
                           child:
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               CircleAvatar(
                                 radius: 12,

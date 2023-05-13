@@ -78,3 +78,131 @@
 //
 // )
 
+//Wrap(
+//                    children: [
+//                      SizedBox(
+//                        height: 35,
+//                        width: 130,
+//                        child: TextButton(
+//                          onPressed: (){},
+//                          style: const ButtonStyle(
+//                              backgroundColor: MaterialStatePropertyAll<Color>(Color(0xFFDCEDC8))
+//                          ),
+//
+//
+//                            child: const ListTile(
+//                              leading: CircleAvatar(
+//                                  radius: 15,
+//                                  backgroundImage: AssetImage("assets/images/google.png")),
+//                              // minLeadingWidth: 11,
+//                              trailing: Text('Google',style: TextStyle(fontSize: 14),),
+//                            ),
+//
+//                        ),
+//                      ),
+//                      const SizedBox(width: 9),
+//                      SizedBox(
+//                          height: 35,
+//                          width: 130,
+//                          child: TextButton(
+//                            onPressed: (){},
+//                            style: const ButtonStyle(
+//                                backgroundColor: MaterialStatePropertyAll<Color>(Color(0xFFDCEDC8))
+//                            ),
+//                            child: const ListTile(
+//                              leading: CircleAvatar(
+//                                radius: 12,
+//                                backgroundImage: AssetImage("assets/images/facebook.png"),
+//                              ),
+//
+//
+//                              trailing: Text("Facebook",style: TextStyle(fontSize: 14)),
+//                            ),
+//                          ),
+//                        ),
+//                    ],
+//                  ),
+
+
+///
+/// /                       SizedBox(
+// //                         width: 130,
+// // >>>>>>> Stashed changes
+// //                         child: TextButton(
+// //                           onPressed: (){},
+// //                           style: const ButtonStyle(
+// //                             backgroundColor: MaterialStatePropertyAll<Color>(Color(0xFFDCEDC8))
+// //     ),
+// //
+// //                           child: Row(
+// //                             children: [
+// //                               CircleAvatar(
+// //                                   radius: 15,
+// //                                   backgroundImage: AssetImage("assets/images/google.png")
+// //                               ),
+// //                            Text('Google',style: TextStyle(fontSize: 14))
+// //                             ],                          // minLeadingWidth: 11,
+// //
+// //                           ),
+// //                         ),
+// //                       ),
+
+
+
+// Wrap(
+//                    children: [
+//
+//                      Container(
+//                        height: 40,
+//                        decoration: BoxDecoration(
+//                            color: BhasoColors.invisible,
+//
+//                            borderRadius: BorderRadius.circular(10)
+//                        ),
+//                        width: 130,
+//                        child: TextButton(
+//                          onPressed: (){},
+//                          // style: const ButtonStyle(
+//                          //     backgroundColor: MaterialStatePropertyAll<Color>(Color(0xFFDCEDC8))
+//                          // ),
+//
+//                          child: Row(
+//                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                            children: const [
+//                              CircleAvatar(
+//                                  radius: 15,
+//                                  backgroundImage: AssetImage("assets/images/google.png")
+//                              ),
+//                              Text('Google',style: TextStyle(fontSize: 14))
+//                            ],                          // minLeadingWidth: 11,
+//
+//                          ),
+//                        ),
+//                      ),
+//
+//                      SizedBox(width: 11),
+//                      Container(
+//                        height: 40,
+//                        decoration: BoxDecoration(
+//                            color: BhasoColors.invisible,
+//
+//                            borderRadius: BorderRadius.circular(10)
+//                        ),
+//                        width: 130,
+//                        child: TextButton(
+//                          onPressed: (){},
+//                          child:
+//                          Row(
+//                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                            children: [
+//                              CircleAvatar(
+//                                radius: 12,
+//                                backgroundImage: AssetImage("assets/images/facebook.png"),
+//                              ),
+//                              Text("Facebook",style: TextStyle(fontSize: 14))
+//                            ],
+//
+//                          ),
+//                        ),),
+//                    ],
+//                  ),
