@@ -7,6 +7,7 @@ import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/features/menu/report/pages/report/success_report.dart';
 import 'package:bhaso/features/menu/settings/pages/settings.dart';
 import 'package:bhaso/screens/loginScreen.dart';
+import 'package:bhaso/screens/signUpPage.dart';
 import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       primaryColor: Colors.green
       ),
 
-      home: LoginPage(),
+      home: const LoginPage(),
     );
   }
 }
