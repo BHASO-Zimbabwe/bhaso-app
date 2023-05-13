@@ -12,15 +12,23 @@ import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 
 import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
 
 import 'features/diary/pages/add_note.dart';
 import 'features/diary/pages/diary.dart';
 // import 'package:onboarding/onboarding.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp( MyApp());
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
