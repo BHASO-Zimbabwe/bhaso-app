@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
 import '../AuthServices/firebaseAuthMethods.dart';
 import '../features/utils/fontsAndColors.dart';
 
@@ -34,7 +35,7 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void signUpUser()async{
-    await FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
+    context.read<FirebaseAuthMethods>().signUpWithEmail(
       name:  nameController.text,
         email: emailController.text,
         password: passwordController.text,
@@ -127,7 +128,8 @@ class _SignUpPageState extends State<SignUpPage> {
                        ),
                        borderRadius: BorderRadius.circular(12)
                    ),
-                   child: const TextField(
+                   child:  TextField(
+                     controller: nameController,
                        decoration: InputDecoration(
                          border: InputBorder.none,
                          hintText: "Enter name",
@@ -153,7 +155,8 @@ class _SignUpPageState extends State<SignUpPage> {
                        ),
                        borderRadius: BorderRadius.circular(12)
                    ),
-                   child: const TextField(
+                   child:  TextField(
+                     controller: emailController,
                        decoration: InputDecoration(
                          border: InputBorder.none,
                          hintText: "Enter email address",
@@ -179,6 +182,7 @@ class _SignUpPageState extends State<SignUpPage> {
                        borderRadius: BorderRadius.circular(12)
                    ),
                    child: TextField(
+                     controller: passwordController,
                        obscureText: obscureSignupPassword,
                        decoration: InputDecoration(
                          suffixIcon: IconButton(
