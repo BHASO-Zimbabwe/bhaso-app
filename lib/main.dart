@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       primaryColor: Colors.green
       ),
 
-      home: const LoginPage(),
+      home: const SignUpPage(),
     );
   }
 }

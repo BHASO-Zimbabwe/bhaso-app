@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import '../AuthServices/firebaseAuthMethods.dart';
 import '../features/utils/fontsAndColors.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -11,7 +12,36 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
 
+
+
   bool obscureSignupPassword = true;
+
+
+  //text controller
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+
+  //to avoid
+  @override
+  void dispose() {
+    super.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  void signUpUser()async{
+    await FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
+      name:  nameController.text,
+        email: emailController.text,
+        password: passwordController.text,
+        context: context);
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -186,7 +216,7 @@ class _SignUpPageState extends State<SignUpPage> {
                        borderRadius: BorderRadius.circular(13),
                      ),
                    ),
-                   onPressed: (){},
+                   onPressed: signUpUser,
 
                    child: const Text(
                      "Create account", style: TextStyle(
