@@ -1,4 +1,6 @@
 
+import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
+import 'dart:ui';
 import 'package:bhaso/features/menu/appearance/pages/appearance.dart';
 import 'package:bhaso/features/menu/menu.dart';
 import 'package:bhaso/features/menu/notification/pages/notification.dart';
@@ -6,13 +8,16 @@ import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
 import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/features/menu/report/pages/report/success_report.dart';
 import 'package:bhaso/features/menu/settings/pages/settings.dart';
+import 'package:bhaso/screens/homePage.dart';
 import 'package:bhaso/screens/loginScreen.dart';
 import 'package:bhaso/screens/signUpPage.dart';
 import 'package:bhaso/screens/splashScreen.dart';
 import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
+import 'package:provider/provider.dart';
 
 import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
 
@@ -41,17 +46,52 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Bhaso-app',
-      theme: ThemeData(
-      textTheme: textTheme,
-      fontFamily: 'Poppins',
-      primaryColor: Colors.green
-      ),
+    return MultiProvider(
+      providers: [
+        Provider<FirebaseAuthMethods>(create: (_)=> FirebaseAuthMethods(FirebaseAuth.instance)
+        ),
+        StreamProvider(create: (context)=> context.read<FirebaseAuthMethods>().authState,
 
-      home: const LoginPage(),
+        initialData: null)
+
+
+      ],
+
+
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Bhaso-app',
+        theme: ThemeData(
+        textTheme: textTheme,
+        fontFamily: 'Poppins',
+        primaryColor: Colors.green
+        ),
+
+        home: const SignUpPage(),
+      //   routes: {
+      // SignUpPage.routeName: (context) => const SignUpPage(),
+      //     LoginPage.routeName: (context) => const LoginPage(),
+      // }
+      ),
     );
   }
 }
+
+//???
+
+class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final firebaseUser = context.watch<User?>();
+
+    if(firebaseUser != null ){
+      return HomePage();
+    }
+    return LoginPage();
+
+  }
+}
+
 

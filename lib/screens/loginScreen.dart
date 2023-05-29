@@ -1,4 +1,7 @@
+import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../features/utils/fontsAndColors.dart';
 
@@ -12,6 +15,26 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool obscurePassword = true;
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+
+
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+  void loginUser(){
+    context.read<FirebaseAuthMethods>().loginWithEmail(
+        email: emailController.text,
+        password: passwordController.text,
+        context: context);
+  }
+
 
 
   @override
@@ -99,7 +122,8 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           borderRadius: BorderRadius.circular(12)
                       ),
-                      child: const TextField(
+                      child: TextField(
+                        controller: emailController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "Enter email address",
@@ -124,6 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(12)
                       ),
                       child: TextField(
+                        controller: passwordController,
                           obscureText: obscurePassword,
                           decoration: InputDecoration(
                             suffixIcon: IconButton(
@@ -158,7 +183,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(13),
                         ),
                       ),
-                      onPressed: (){},
+                      onPressed: loginUser,
 
                       child: const Text(
                         "Login", style: TextStyle(
