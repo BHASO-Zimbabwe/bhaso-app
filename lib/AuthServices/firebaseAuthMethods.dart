@@ -1,3 +1,5 @@
+import 'package:bhaso/features/menu/menu.dart';
+import 'package:bhaso/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -57,7 +59,7 @@ Future<void>signUpWithEmail({
         email: email,
         password: password);
     _user = userCred.user;
-    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HomePage()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Menu_Page()));
 
 
   }
@@ -83,6 +85,7 @@ Future<void> sendEmailVerification(BuildContext context) async {
 Future<void> signOut(BuildContext context)async {
   try{
    await _auth.signOut();
+   Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
   }on FirebaseAuthException catch(e){
     showSnackBar(context, e.message!);
   }

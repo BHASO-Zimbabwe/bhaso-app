@@ -1,3 +1,4 @@
+import 'package:bhaso/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
@@ -57,17 +58,17 @@ class _SignUpPageState extends State<SignUpPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
 
-                    SizedBox(height:82 ),
+                    SizedBox(height:72 ),
 
                     Text("Create",style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 41
+                        fontSize: 31
                     ),
                       textAlign: TextAlign.left,),
 
                     Text("Account!",style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 41
+                        fontSize: 31
                     ),
                       textAlign: TextAlign.left,),
 
@@ -85,7 +86,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     children: [
 
                       Container(
-                        height: 180,
+                        height: 160,
 
                         width: 210 ,
 
@@ -117,7 +118,7 @@ class _SignUpPageState extends State<SignUpPage> {
                  const Align(
                    alignment: Alignment.topLeft,
                    child: Text("Full name",
-                     style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+                     style: TextStyle( fontWeight: FontWeight.w400,fontSize: 15),),
                  ),
 
 
@@ -144,7 +145,7 @@ class _SignUpPageState extends State<SignUpPage> {
                  const Align(
                    alignment: Alignment.topLeft,
                    child: Text("Email",
-                     style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+                     style: TextStyle( fontWeight: FontWeight.w400,fontSize: 15),),
                  ),
 
 
@@ -171,7 +172,7 @@ class _SignUpPageState extends State<SignUpPage> {
                  const Align(
                    alignment: Alignment.topLeft,
                    child: Text("Password",
-                     style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+                     style: TextStyle( fontWeight: FontWeight.w400,fontSize: 15),),
                  ),
 
                  Container(
@@ -209,13 +210,13 @@ class _SignUpPageState extends State<SignUpPage> {
                  ),
                  const SizedBox(height: 15,),
 
-                const Text("By creating an account, you agree to our",style: TextStyle(fontSize: 18),),
-                 TextButton(onPressed: (){}, child: const Text("Privacy Policy and Terms of Use",style: TextStyle(fontSize: 18, color: BhasoColors.primary))),
-
+                const Text("By creating an account, you agree to our",style: TextStyle(fontSize: 15),),
+                 TextButton(onPressed: (){}, child: const Text("Privacy Policy and Terms of Use",style: TextStyle(fontSize: 15, color: BhasoColors.primary))),
+SizedBox(height: 20,),
                  ElevatedButton(
                    style: ElevatedButton.styleFrom(
                      backgroundColor: const Color(0xFF33691E),
-                     minimumSize: const Size(290, 70),
+                     minimumSize: const Size(290, 50),
                      shape: RoundedRectangleBorder(
                        borderRadius: BorderRadius.circular(13),
                      ),
@@ -225,7 +226,7 @@ class _SignUpPageState extends State<SignUpPage> {
                    child: const Text(
                      "Create account", style: TextStyle(
                        color: Colors.white,
-                       fontWeight: FontWeight.bold, fontSize: 19),
+                       fontWeight: FontWeight.bold, fontSize: 15),
                    ),
                  ),
 
@@ -234,7 +235,7 @@ class _SignUpPageState extends State<SignUpPage> {
                      onPressed: (){},
                      child: const Text("or continue with",
                        style: TextStyle(
-                           fontSize: 19,
+                           fontSize: 15,
                            color: Colors.black45
 
                        ),)),
@@ -302,17 +303,25 @@ class _SignUpPageState extends State<SignUpPage> {
 
 
 
-                 const Padding(padding: EdgeInsets.only(bottom: 15)),
+                 // const Padding(padding: EdgeInsets.only(bottom: 15)),
 
-                 RichText(text: const TextSpan(
-                   text: "Already have an account? ",style: TextStyle(fontSize: 15,color:Colors.black54),
+                 // RichText(text: const TextSpan(
+                 //   text: "Already have an account? ",style: TextStyle(fontSize: 15,color:Colors.black54),
+                 //   children: [
+                 //     TextSpan(text: "Login",style: TextStyle(fontSize: 17,color: Colors.green),
+                 //     )
+                 //
+                 //   ],
+                 //
+                 // )
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
                    children: [
-                     TextSpan(text: "Login",style: TextStyle(fontSize: 17,color: Colors.green),
-                     )
-
+                     Text('Already have an account?'),
+                     TextButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                     }, child: Text('Login',style: TextStyle(color: Colors.green) ,))
                    ],
-
-                 )
 
                  )
 
