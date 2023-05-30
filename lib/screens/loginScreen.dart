@@ -1,4 +1,7 @@
 import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
+import 'package:bhaso/screens/forgot_password_page.dart';
+import 'package:bhaso/screens/signUpPage.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -54,13 +57,13 @@ class _LoginPageState extends State<LoginPage> {
 
                       Text("Welcome",style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 41
+                          fontSize: 31
                       ),
                         textAlign: TextAlign.left,),
 
                       Text("Back!",style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 41
+                          fontSize: 31
                       ),
                         textAlign: TextAlign.left,),
 
@@ -111,46 +114,64 @@ class _LoginPageState extends State<LoginPage> {
                     const Align(
                       alignment: Alignment.topLeft,
                       child: Text("Email",
-                        style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+                        style: TextStyle( fontWeight: FontWeight.w400,fontSize: 15),),
                     ),
 
 
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.grey
-                          ),
-                          borderRadius: BorderRadius.circular(12)
-                      ),
-                      child: TextField(
+                    // Container(
+                    //   decoration: BoxDecoration(
+                    //       border: Border.all(
+                    //           color: Colors.grey
+                    //       ),
+                    //       borderRadius: BorderRadius.circular(12)
+                    //   ),),
+                    TextFormField(
                         controller: emailController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (email) =>
+                          email != null && EmailValidator.validate(email)
+                              ? null
+                              : "Enter valid Email",
                           decoration: InputDecoration(
-                            border: InputBorder.none,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey,
+
+                              ),
+                              borderRadius: BorderRadius.circular(12)
+                            ),
                             hintText: "Enter email address",
-                            contentPadding: EdgeInsets.all(21),
+                            contentPadding: EdgeInsets.all(18),
+
 
                           )
 
-                      ),
+
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 15),
                     const Align(
                       alignment: Alignment.topLeft,
                       child: Text("Password",
-                        style: TextStyle( fontWeight: FontWeight.w400,fontSize: 19),),
+                        style: TextStyle( fontWeight: FontWeight.w400,fontSize: 15),),
                     ),
 
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.grey
-                          ),
-                          borderRadius: BorderRadius.circular(12)
-                      ),
-                      child: TextField(
+
+                    TextFormField(
                         controller: passwordController,
                           obscureText: obscurePassword,
-                          decoration: InputDecoration(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (password) =>
+                        password != null && password.length > 6
+                            ? null
+                            : "Enter a minimum of 6 characters",
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.grey,
+
+                                ),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
                             suffixIcon: IconButton(
                                 onPressed: (){
                                   setState(() {
@@ -165,20 +186,20 @@ class _LoginPageState extends State<LoginPage> {
 
                             ),
 
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.all(21),
+
+                            contentPadding: EdgeInsets.all(18),
 
                           )
 
-                      ),
-                    ), SizedBox(height: 29,),
+
+                    ), SizedBox(height: 59,),
 
 
 
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF33691E),
-                        minimumSize: const Size(290, 70),
+                        minimumSize: const Size(290, 50),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(13),
                         ),
@@ -188,21 +209,20 @@ class _LoginPageState extends State<LoginPage> {
                       child: const Text(
                         "Login", style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold, fontSize: 19),
+                          fontWeight: FontWeight.bold, fontSize: 15),
                       ),
                     ),
                     SizedBox(height: 15,),
                     //texbutton
 
 
-                          Text(
+                          TextButton(
+                            onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPasswordPage())); }, child: Text("Forgot your password?",
+                               style: TextStyle(
+                                         fontSize: 15,
+                                        color: Colors.black45
 
-                              "Forgot your password?",
-                                style: TextStyle(
-                                  fontSize: 19,
-                                  color: Colors.black45
-
-                                ),),
+                                       )),),
 
                           //continue with
 
@@ -211,7 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                               onPressed: (){},
                               child: const Text("or continue with",
                                 style: TextStyle(
-                                    fontSize: 19,
+                                    fontSize: 15,
                                     color: Colors.black45
 
                                 ),)),
@@ -279,17 +299,26 @@ class _LoginPageState extends State<LoginPage> {
                     // const SizedBox(width: 20),
 
                   // Text("",style: TextStyle(fontSize: 18,color: Colors.black54),),
-                    RichText(text: const TextSpan(
-                      text: "Don't have an account? ",style: TextStyle(fontSize: 15,color:Colors.black54),
+                  //   RichText(text: const TextSpan(
+                  //     text: "Don't have an account? ",style: TextStyle(fontSize: 15,color:Colors.black54),
+                  //     children: [
+                  //       TextSpan(text: "SignUp",style: TextStyle(fontSize: 17,color: Colors.green),
+                  //       )
+                  //     ],
+                  //
+                  //   )
+                  //
+                  //   )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        TextSpan(text: "SignUp",style: TextStyle(fontSize: 17,color: Colors.green),
-                        )
+                        Text('Don\'t have an account?'),
+                        TextButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
+                        }, child: Text('SignUp',style: TextStyle(color: Colors.green) ,))
                       ],
 
                     )
-
-                    )
-
 
                   ]
 

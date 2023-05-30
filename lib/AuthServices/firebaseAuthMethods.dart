@@ -1,6 +1,9 @@
+import 'package:bhaso/features/menu/menu.dart';
+import 'package:bhaso/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../screens/CheckEmail.dart';
 import '../screens/homePage.dart';
 import '../widgets/showSnackBar.dart';
 
@@ -57,7 +60,7 @@ Future<void>signUpWithEmail({
         email: email,
         password: password);
     _user = userCred.user;
-    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HomePage()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Menu_Page()));
 
 
   }
@@ -79,10 +82,32 @@ Future<void> sendEmailVerification(BuildContext context) async {
   }
 }
 
+  Future<void> passwordReset(String? email,context) async {
+    showDialog(context: context,barrierDismissible: false,
+        builder: (context) => const Center(child: CircularProgressIndicator()));
+    final _auth = FirebaseAuth.instance;
+    try {
+      // _formKey.currentState?.save();
+
+      await _auth.sendPasswordResetEmail(email: email!);
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) {
+          return CheckEmail(email:email);
+        }),
+      );
+    } catch (e) {
+      print(e);
+    }
+  }
+
+
 //sign out
 Future<void> signOut(BuildContext context)async {
   try{
    await _auth.signOut();
+   Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
   }on FirebaseAuthException catch(e){
     showSnackBar(context, e.message!);
   }

@@ -1,7 +1,10 @@
+import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
 import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/fontsAndColors.dart';
 
@@ -14,8 +17,14 @@ class Menu_Page extends StatefulWidget {
   State<Menu_Page> createState() => _Menu_PageState();
 }
 
-class _Menu_PageState extends State<Menu_Page> {
 
+class _Menu_PageState extends State<Menu_Page> {
+  final User? user = FirebaseAuth.instance.currentUser;
+
+
+  Future<void> signOut() async{
+    await context.read<FirebaseAuthMethods>().signOut(context);
+  }
   int selected = 0;
 
   @override
@@ -188,9 +197,7 @@ class _Menu_PageState extends State<Menu_Page> {
                         color: Colors.white,
                       ),
                       title: const Text('Logout',style: TextStyle(color: Colors.white)),
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
+                      onTap: ()=>signOut()
                     ),
                   ],
                 )

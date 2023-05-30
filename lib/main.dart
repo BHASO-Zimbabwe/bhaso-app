@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green
         ),
 
-        home: const SignUpPage(),
+        home: const AuthWrapper(),
       //   routes: {
       // SignUpPage.routeName: (context) => const SignUpPage(),
       //     LoginPage.routeName: (context) => const LoginPage(),
@@ -87,7 +87,7 @@ class AuthWrapper extends StatelessWidget {
     final firebaseUser = context.watch<User?>();
 
     if(firebaseUser != null ){
-      return HomePage();
+      return Menu_Page();
     }
     return LoginPage();
 
