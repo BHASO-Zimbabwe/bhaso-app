@@ -3,6 +3,7 @@ import 'package:bhaso/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../screens/CheckEmail.dart';
 import '../screens/homePage.dart';
 import '../widgets/showSnackBar.dart';
 
@@ -80,6 +81,27 @@ Future<void> sendEmailVerification(BuildContext context) async {
     showSnackBar(context,e.message!);
   }
 }
+
+  Future<void> passwordReset(String? email,context) async {
+    showDialog(context: context,barrierDismissible: false,
+        builder: (context) => const Center(child: CircularProgressIndicator()));
+    final _auth = FirebaseAuth.instance;
+    try {
+      // _formKey.currentState?.save();
+
+      await _auth.sendPasswordResetEmail(email: email!);
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) {
+          return CheckEmail(email:email);
+        }),
+      );
+    } catch (e) {
+      print(e);
+    }
+  }
+
 
 //sign out
 Future<void> signOut(BuildContext context)async {

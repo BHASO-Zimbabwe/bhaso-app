@@ -4,6 +4,7 @@ import 'package:bhaso/features/menu/report/pages/report/reportIssue.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/fontsAndColors.dart';
 
@@ -22,7 +23,7 @@ class _Menu_PageState extends State<Menu_Page> {
 
 
   Future<void> signOut() async{
-    await FirebaseAuth.instance.signOut();
+    await context.read<FirebaseAuthMethods>().signOut(context);
   }
   int selected = 0;
 

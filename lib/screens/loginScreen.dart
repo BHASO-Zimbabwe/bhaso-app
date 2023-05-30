@@ -1,5 +1,7 @@
 import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
+import 'package:bhaso/screens/forgot_password_page.dart';
 import 'package:bhaso/screens/signUpPage.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -116,23 +118,35 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
 
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.grey
-                          ),
-                          borderRadius: BorderRadius.circular(12)
-                      ),
-                      child: TextField(
+                    // Container(
+                    //   decoration: BoxDecoration(
+                    //       border: Border.all(
+                    //           color: Colors.grey
+                    //       ),
+                    //       borderRadius: BorderRadius.circular(12)
+                    //   ),),
+                    TextFormField(
                         controller: emailController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (email) =>
+                          email != null && EmailValidator.validate(email)
+                              ? null
+                              : "Enter valid Email",
                           decoration: InputDecoration(
-                            border: InputBorder.none,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey,
+
+                              ),
+                              borderRadius: BorderRadius.circular(12)
+                            ),
                             hintText: "Enter email address",
                             contentPadding: EdgeInsets.all(18),
 
+
                           )
 
-                      ),
+
                     ),
                     const SizedBox(height: 15),
                     const Align(
@@ -141,17 +155,23 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle( fontWeight: FontWeight.w400,fontSize: 15),),
                     ),
 
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.grey
-                          ),
-                          borderRadius: BorderRadius.circular(12)
-                      ),
-                      child: TextField(
+
+                    TextFormField(
                         controller: passwordController,
                           obscureText: obscurePassword,
-                          decoration: InputDecoration(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (password) =>
+                        password != null && password.length > 6
+                            ? null
+                            : "Enter a minimum of 6 characters",
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.grey,
+
+                                ),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
                             suffixIcon: IconButton(
                                 onPressed: (){
                                   setState(() {
@@ -166,12 +186,12 @@ class _LoginPageState extends State<LoginPage> {
 
                             ),
 
-                            border: InputBorder.none,
+
                             contentPadding: EdgeInsets.all(18),
 
                           )
 
-                      ),
+
                     ), SizedBox(height: 59,),
 
 
@@ -196,14 +216,13 @@ class _LoginPageState extends State<LoginPage> {
                     //texbutton
 
 
-                          Text(
+                          TextButton(
+                            onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPasswordPage())); }, child: Text("Forgot your password?",
+                               style: TextStyle(
+                                         fontSize: 15,
+                                        color: Colors.black45
 
-                              "Forgot your password?",
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black45
-
-                                ),),
+                                       )),),
 
                           //continue with
 

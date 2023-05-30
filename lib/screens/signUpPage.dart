@@ -1,4 +1,5 @@
 import 'package:bhaso/screens/loginScreen.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
@@ -131,9 +132,15 @@ class _SignUpPageState extends State<SignUpPage> {
                    ),
                    child:  TextField(
                      controller: nameController,
+
                        decoration: InputDecoration(
-                         border: InputBorder.none,
-                         hintText: "Enter name",
+                         border: OutlineInputBorder(
+                             borderSide: BorderSide(
+                               color: Colors.grey,
+
+                             ),
+                             borderRadius: BorderRadius.circular(12)
+                         ),                         hintText: "Enter name",
                          contentPadding: EdgeInsets.all(15),
 
                        )
@@ -149,24 +156,27 @@ class _SignUpPageState extends State<SignUpPage> {
                  ),
 
 
-                 Container(
-                   decoration: BoxDecoration(
-                       border: Border.all(
-                           color: Colors.grey
-                       ),
-                       borderRadius: BorderRadius.circular(12)
-                   ),
-                   child:  TextField(
+                  TextFormField(
                      controller: emailController,
+                       autovalidateMode: AutovalidateMode.onUserInteraction,
+                       validator: (email) =>
+                       email != null && EmailValidator.validate(email)
+                           ? null
+                           : "Enter valid Email",
                        decoration: InputDecoration(
-                         border: InputBorder.none,
-                         hintText: "Enter email address",
+                         border: OutlineInputBorder(
+                             borderSide: BorderSide(
+                               color: Colors.grey,
+
+                             ),
+                             borderRadius: BorderRadius.circular(12)
+                         ),                         hintText: "Enter email address",
                          contentPadding: EdgeInsets.all(15),
 
                        )
 
                    ),
-                 ),
+
                  const SizedBox(height: 5),
 
                  const Align(
@@ -175,17 +185,24 @@ class _SignUpPageState extends State<SignUpPage> {
                      style: TextStyle( fontWeight: FontWeight.w400,fontSize: 15),),
                  ),
 
-                 Container(
-                   decoration: BoxDecoration(
-                       border: Border.all(
-                           color: Colors.grey
-                       ),
-                       borderRadius: BorderRadius.circular(12)
-                   ),
-                   child: TextField(
+                 TextFormField(
+
                      controller: passwordController,
                        obscureText: obscureSignupPassword,
+                       autovalidateMode: AutovalidateMode.onUserInteraction,
+
+                       validator: (password) =>
+                       password != null && password.length > 6
+                           ? null
+                           : "Enter a minimum of 6 characters",
                        decoration: InputDecoration(
+                         border: OutlineInputBorder(
+                             borderSide: BorderSide(
+                               color: Colors.grey,
+
+                             ),
+                             borderRadius: BorderRadius.circular(12)
+                         ),
                          suffixIcon: IconButton(
                              onPressed: (){
                                setState(() {
@@ -201,13 +218,12 @@ class _SignUpPageState extends State<SignUpPage> {
 
                          ),
 
-                         border: InputBorder.none,
                          contentPadding: EdgeInsets.all(15),
 
                        )
 
                    ),
-                 ),
+
                  const SizedBox(height: 15,),
 
                 const Text("By creating an account, you agree to our",style: TextStyle(fontSize: 15),),
