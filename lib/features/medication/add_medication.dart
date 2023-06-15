@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../home/home_page.dart';
+import '../utils/fontsAndColors.dart';
 import 'med_detail.dart';
 
 class AddMedication extends StatelessWidget {
@@ -10,6 +11,11 @@ class AddMedication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: BhasoColors.primary,
+        onPressed: () {  },),
+
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
