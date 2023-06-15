@@ -64,7 +64,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
         textTheme: textTheme,
         fontFamily: 'Poppins',
-        primaryColor: Colors.green
+        primaryColor: Colors.green,
+          secondaryHeaderColor: Colors.green,
+
         ),
 
         home: const AuthWrapper(),
