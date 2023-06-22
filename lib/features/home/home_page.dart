@@ -1,4 +1,5 @@
 
+import 'package:bhaso/features/add_medication/add_name.dart';
 import 'package:bhaso/features/utils/fontsAndColors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -127,9 +128,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
       floatingActionButton: FloatingActionButton(
+        heroTag: "btn1",
           child: Icon(Icons.add),
         backgroundColor: BhasoColors.primary,
-        onPressed: () {  },),
+        onPressed: () { Navigator.push(context, MaterialPageRoute(builder:
+            (context)=>AddName())); },),
 
 
       drawer: Drawer(

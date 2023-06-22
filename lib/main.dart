@@ -1,5 +1,6 @@
 
 import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
+import 'package:bhaso/features/add_medication/add_name.dart';
 import 'dart:ui';
 import 'package:bhaso/features/menu/appearance/pages/appearance.dart';
 import 'package:bhaso/features/menu/menu.dart';
@@ -16,6 +17,8 @@ import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'features/add_medication/add_type.dart';
+import 'features/medication/Frequency.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 
@@ -70,10 +73,13 @@ class MyApp extends StatelessWidget {
         ),
 
         home: const AuthWrapper(),
-      //   routes: {
-      // SignUpPage.routeName: (context) => const SignUpPage(),
-      //     LoginPage.routeName: (context) => const LoginPage(),
-      // }
+        routes: {
+
+            '/add_name': (context) => const AddName(),
+            '/add_type': (context) => const AddType(),
+            '/frequency': (context)=> const Frequency()
+          },
+
       ),
     );
   }

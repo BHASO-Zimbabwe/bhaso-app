@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../add_medication/add_name.dart';
 import '../home/home_page.dart';
 import '../utils/fontsAndColors.dart';
 import 'med_detail.dart';
@@ -14,7 +15,8 @@ class AddMedication extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         backgroundColor: BhasoColors.primary,
-        onPressed: () {  },),
+        onPressed: () { Navigator.push(context, MaterialPageRoute(builder:
+            (context)=>AddName()));  },),
 
       body: SafeArea(
         child: Column(
