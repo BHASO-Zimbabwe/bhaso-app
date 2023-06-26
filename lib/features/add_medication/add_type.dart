@@ -150,7 +150,8 @@ class MedType extends StatelessWidget{
               padding: const EdgeInsets.fromLTRB(4, 10, 4, 4),
               child: SizedBox(
 
-                  child: SvgPicture.asset("${types_list[index]}"),height: 30,),
+                  child: SvgPicture.asset("${types_list[index]}")
+                ,height: 30,),
             ),
             Padding(
               padding: const EdgeInsets.all(4.0),
