@@ -62,7 +62,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       ),
                       Container(
                         padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
-                        child: const Column(
+                        child:  Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(

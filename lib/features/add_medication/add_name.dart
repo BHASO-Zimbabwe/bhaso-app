@@ -1,74 +1,80 @@
 import 'package:bhaso/features/utils/fontsAndColors.dart';
+import 'package:bhaso/models/medication.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddName extends StatelessWidget {
-  const AddName({Key? key}) : super(key: key);
+   AddName({Key? key}) : super(key: key);
  
   
-  
+  TextEditingController textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    moveNext()=>Navigator.pushNamed(context, '/add_type');
-    return Scaffold(
-      body: SafeArea(
-          child: Container(
-            padding: EdgeInsets.fromLTRB(10, 30, 10, 50),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(onPressed: ()=>Navigator.pop(context),
-                      icon: Icon(Icons. arrow_back_ios_sharp, size: 15,)),
-                  Text("Add Medicine", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                  SizedBox(width: 30,)
-                ],
-              ),
-              SizedBox(height: 30,),
-
-              Expanded(
+    moveNext(){
+       // med.medicationName = textController.text;
+      Navigator.pushNamed(context, '/add_type');
+    }
+      return Scaffold(
+          body: SafeArea(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(10, 30, 10, 50),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-
                   children: [
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                        border: Border.all(color: BhasoColors.headColor)
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(onPressed: ()=>Navigator.pop(context),
+                            icon: Icon(Icons. arrow_back_ios_sharp, size: 15,)),
+                        Text("Add Medicine", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
+                        SizedBox(width: 30,)
+                      ],
+                    ),
+                    SizedBox(height: 30,),
 
-                      height: 50,
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      child: Row(
+                    Expanded(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(Icons.search),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.6,
-                            child: TextFormField(
-                            decoration:InputDecoration.collapsed(hintText: 'Medication name')
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
 
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(12)),
+                                border: Border.all(color: BhasoColors.headColor)
+                            ),
+
+                            height: 50,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(Icons.search),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.6,
+                                  child: TextFormField(
+                                      controller: textController,
+                                      decoration:InputDecoration.collapsed(hintText: 'Medication name')
+
+                                  ),
+                                ),
+                                IconButton(onPressed: (){}, icon: Icon(Icons.mic))
+                              ],
                             ),
                           ),
-                          IconButton(onPressed: (){}, icon: Icon(Icons.mic))
+                          LargeButton(title: "Next", move: moveNext)
+
                         ],
                       ),
                     ),
-                    LargeButton(title: "Next", move: moveNext)
 
                   ],
                 ),
-              ),
-
-            ],
-          ),
-      ))
-    );
+              ))
+      );
+    }
   }
-}
+
 
 
 class LargeButton extends StatelessWidget{

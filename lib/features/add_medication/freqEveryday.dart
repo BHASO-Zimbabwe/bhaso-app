@@ -15,8 +15,8 @@ class _FreqEverydayState extends State<FreqEveryday> {
     "Every other day",
     "Choose specific days",
     "Every X days",
-    "Every X weeks",
-    "Every X months"
+    // "Every X weeks",
+    // "Every X months"
   ];
 
   late int tappedIndex;
