@@ -1,6 +1,8 @@
 
 import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
-import 'package:bhaso/features/addMedication/frequencies/freqEveryday.dart';
+import 'package:bhaso/features/add_medication/add_name.dart';
+import 'package:bhaso/features/add_medication/add_type.dart';
+import 'package:bhaso/features/add_medication/freqEveryday.dart';
 import 'dart:ui';
 import 'package:bhaso/features/menu/appearance/pages/appearance.dart';
 import 'package:bhaso/features/menu/menu.dart';
@@ -9,6 +11,7 @@ import 'package:bhaso/features/menu/profile/pages/profileSettingsDetails.dart';
 import 'package:bhaso/features/menu/profile/pages/profile_settings.dart';
 import 'package:bhaso/features/menu/report/pages/report/success_report.dart';
 import 'package:bhaso/features/menu/settings/pages/settings.dart';
+import 'package:bhaso/providers/add_med_provider.dart';
 import 'package:bhaso/screens/homePage.dart';
 import 'package:bhaso/screens/loginScreen.dart';
 import 'package:bhaso/screens/signUpPage.dart';
@@ -17,8 +20,8 @@ import 'package:bhaso/features/onboarding/onboard.dart';
 import 'package:bhaso/features/onboarding/onboarding_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'features/addMedication/frequencies/howOftenDaily.dart';
-import 'features/addMedication/frequencies/xhours.dart';
+import 'features/add_medication/howOftenDaily.dart';
+import 'features/add_medication/xhours.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 
@@ -51,8 +54,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<FirebaseAuthMethods>(create: (_)=> FirebaseAuthMethods(FirebaseAuth.instance)
-        ),
+        Provider<FirebaseAuthMethods>(create: (_)=> FirebaseAuthMethods(FirebaseAuth.instance)),
+        Provider<AddMedProvider>(create: (_)=> AddMedProvider()),
         StreamProvider(create: (context)=> context.read<FirebaseAuthMethods>().authState,
 
         initialData: null)
@@ -70,11 +73,17 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green
         ),
 
-        home: EveryXHours(),
-      //   routes: {
-      // SignUpPage.routeName: (context) => const SignUpPage(),
-      //     LoginPage.routeName: (context) => const LoginPage(),
-      // }
+        home: AuthWrapper(),
+        routes: {
+         '/signUp': (context) =>  SignUpPage(),
+          "/login": (context) =>  LoginPage(),
+          "/add_name":(context) => AddName(),
+          "/add_type": (context)=>AddType(),
+          "/frequency": (context)=>FreqEveryday(),
+          "/often": (context)=>HowOftenDaily(),
+          // "": (context)=>AddType()
+
+        }
       ),
     );
   }
