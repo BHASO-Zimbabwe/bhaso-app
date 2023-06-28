@@ -28,7 +28,7 @@ class _CheckEmailState extends State<CheckEmail> {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     SizedBox(
 
                       height: 150,
@@ -37,15 +37,15 @@ class _CheckEmailState extends State<CheckEmail> {
 
                       //Image.asset("assets/img.png")
                     ),
-                    Text("Check your mail",style:TextStyle(color: Colors.black,fontSize: 32,fontWeight: FontWeight.bold),),
-                    SizedBox(height: 10,),
+                    const Text("Check your mail",style:TextStyle(color: Colors.black,fontSize: 32,fontWeight: FontWeight.bold),),
+                    const SizedBox(height: 10,),
                     Container(
-                      padding: EdgeInsets.fromLTRB(60, 10, 40, 10),
+                      padding: const EdgeInsets.fromLTRB(60, 10, 40, 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text("We sent a password link to \n"
-                              "${widget.email}", style: TextStyle(fontSize: 13.5)),
+                              "${widget.email}", style: const TextStyle(fontSize: 13.5)),
 
                         ],
 
@@ -53,7 +53,7 @@ class _CheckEmailState extends State<CheckEmail> {
                     ),
 
 
-                    SizedBox(height:60),
+                    const SizedBox(height:60),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF33691E),
@@ -68,8 +68,8 @@ class _CheckEmailState extends State<CheckEmail> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Didn't receive mail?"),
-                        TextButton(onPressed: (){onPressed2(context);}, child: Text("Click to Resend"))
+                        const Text("Didn't receive mail?"),
+                        TextButton(onPressed: (){onPressed2(context);}, child: const Text("Click to Resend"))
                       ],
                     )
                   ]

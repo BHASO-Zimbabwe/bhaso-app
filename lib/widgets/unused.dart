@@ -148,61 +148,51 @@
 // //                       ),
 
 
-
-// Wrap(
-//                    children: [
+///Column(
+//           children: [
+//             Padding(padding: EdgeInsets.only(top: 25,left: 14,)),
+//             Container(
+//               child: Row(
 //
-//                      Container(
-//                        height: 40,
-//                        decoration: BoxDecoration(
-//                            color: BhasoColors.invisible,
+//                 children: [
+//                   IconButton(onPressed: Navigator.of(context).pop,
+//                       icon: Icon(Icons.arrow_back_ios_new_outlined) ),
+//                   SizedBox(width: 27,),
 //
-//                            borderRadius: BorderRadius.circular(10)
-//                        ),
-//                        width: 130,
-//                        child: TextButton(
-//                          onPressed: (){},
-//                          // style: const ButtonStyle(
-//                          //     backgroundColor: MaterialStatePropertyAll<Color>(Color(0xFFDCEDC8))
-//                          // ),
+//                   Flexible(child: Title(color: Colors.black,
+//                     child: Text("Choose hour frequency",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),))
 //
-//                          child: Row(
-//                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-//                            children: const [
-//                              CircleAvatar(
-//                                  radius: 15,
-//                                  backgroundImage: AssetImage("assets/images/google.png")
-//                              ),
-//                              Text('Google',style: TextStyle(fontSize: 14))
-//                            ],                          // minLeadingWidth: 11,
+//                 ],
+//               ),
+//             ),
 //
-//                          ),
-//                        ),
-//                      ),
+//             //horizontal ScrollAxis
+//             Expanded(
+//               child:  Container(
 //
-//                      SizedBox(width: 11),
-//                      Container(
-//                        height: 40,
-//                        decoration: BoxDecoration(
-//                            color: BhasoColors.invisible,
+//                 child:
+//                   SizedBox(
+//                     height: 55,
+//                     child: ListView.builder(
+//                         itemCount:hours.length,
+//                         scrollDirection: Axis.horizontal,
+//                         itemBuilder: (BuildContext context, int index)=>
+//                             GestureDetector(
 //
-//                            borderRadius: BorderRadius.circular(10)
-//                        ),
-//                        width: 130,
-//                        child: TextButton(
-//                          onPressed: (){},
-//                          child:
-//                          Row(
-//                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-//                            children: [
-//                              CircleAvatar(
-//                                radius: 12,
-//                                backgroundImage: AssetImage("assets/images/facebook.png"),
-//                              ),
-//                              Text("Facebook",style: TextStyle(fontSize: 14))
-//                            ],
+//                               onTap: (){
+//                                 setState(() {
+//                                   clickedIndex=index;
+//                                 });
+//                               },
 //
-//                          ),
-//                        ),),
-//                    ],
-//                  ),
+//                             )
+//
+//                     ),
+//
+//                   ),
+//
+//     ),
+//
+//             )
+//           ],
+//         ),

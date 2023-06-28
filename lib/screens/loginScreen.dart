@@ -47,11 +47,11 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Stack(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
 
                       SizedBox(height:80 ),
 
@@ -207,17 +207,17 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: loginUser,
 
                       child: const Text(
-                        "Login", style: TextStyle(
+                        "Sign ", style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold, fontSize: 15),
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    const SizedBox(height: 15,),
                     //texbutton
 
 
                           TextButton(
-                            onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPasswordPage())); }, child: Text("Forgot your password?",
+                            onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPasswordPage())); }, child: const Text("Forgot your password?",
                                style: TextStyle(
                                          fontSize: 15,
                                         color: Colors.black45

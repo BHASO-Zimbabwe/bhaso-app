@@ -50,7 +50,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         //Image.asset("assets/img.png")
                       ),
                       SizedBox(height: 50),
-                      Text(
+                      const Text(
                         "Forgot Password!",
                         style: TextStyle(
                             color: Colors.black,
@@ -62,7 +62,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       ),
                       Container(
                         padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
@@ -83,7 +83,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             : "Enter valid Email",
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.grey,
 
                               ),
