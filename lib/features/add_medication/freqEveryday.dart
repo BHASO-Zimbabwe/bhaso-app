@@ -9,6 +9,7 @@ class FreqEveryday extends StatefulWidget {
 }
 
 class _FreqEverydayState extends State<FreqEveryday> {
+  moveNext()=>Navigator.pushNamed(context, '/often');
 
   final List<String> options = [
     "Everyday",
@@ -107,7 +108,7 @@ class _FreqEverydayState extends State<FreqEveryday> {
                       borderRadius: BorderRadius.circular(13),
                     ),
                   ),
-                  onPressed: (){},
+                  onPressed: moveNext,
 
                   child: const Text(
                     "Next", style: TextStyle(

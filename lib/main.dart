@@ -73,13 +73,17 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green
         ),
 
-        home: EveryXHours(),
+        home: AuthWrapper(),
         routes: {
          '/signUp': (context) =>  SignUpPage(),
           "/login": (context) =>  LoginPage(),
           "/add_name":(context) => AddName(),
-          "/add_type": (context)=>AddType()
-      }
+          "/add_type": (context)=>AddType(),
+          "/frequency": (context)=>FreqEveryday(),
+          "/often": (context)=>HowOftenDaily(),
+          // "": (context)=>AddType()
+
+        }
       ),
     );
   }
