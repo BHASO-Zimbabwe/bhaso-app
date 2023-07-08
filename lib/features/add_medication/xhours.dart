@@ -1,3 +1,4 @@
+import 'package:bhaso/features/add_medication/add_name.dart';
 import 'package:bhaso/features/utils/fontsAndColors.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class EveryXHours extends StatefulWidget {
 }
 
 class _EveryXHoursState extends State<EveryXHours> {
+  moveNext()=>Navigator.pushNamed(context, "/timeNdDose");
   late int clickedIndex = 0;
 
   @override
@@ -23,6 +25,7 @@ class _EveryXHoursState extends State<EveryXHours> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(10,50,10,40),
@@ -32,7 +35,7 @@ class _EveryXHoursState extends State<EveryXHours> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(onPressed: (){},
+                    IconButton(onPressed: Navigator.of(context).pop,
                         icon: Icon(Icons. arrow_back_ios_sharp, size: 15,)),
                     Text("Choose hour frequency", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
                     SizedBox(width: 30,)
@@ -64,22 +67,23 @@ class _EveryXHoursState extends State<EveryXHours> {
                   ),
                 ),
 
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF33691E),
-                    minimumSize: const Size(350, 60),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13),
-                    ),
-                  ),
-                  onPressed: (){},
-
-                  child: const Text(
-                    "Next", style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                ),
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: const Color(0xFF33691E),
+                //     minimumSize: const Size(350, 60),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(13),
+                //     ),
+                //   ),
+                //   onPressed: (){},
+                //
+                //   child: const Text(
+                //     "Next", style: TextStyle(
+                //       color: Colors.white,
+                //       fontWeight: FontWeight.bold, fontSize: 15),
+                //   ),
+                // ),
+                LargeButton(title: "Next", move: moveNext)
 
 
 

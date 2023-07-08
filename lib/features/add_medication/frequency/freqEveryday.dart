@@ -1,14 +1,25 @@
+import 'package:bhaso/features/add_medication/add_name.dart';
 import 'package:bhaso/features/utils/fontsAndColors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../models/medication.dart';
+import 'package:bhaso/providers/add_med_provider.dart';
+
+import 'Xdays.dart';
+import 'chooseSpecificDays.dart';
+
 
 class FreqEveryday extends StatefulWidget {
   const FreqEveryday({Key? key}) : super(key: key);
 
   @override
   State<FreqEveryday> createState() => _FreqEverydayState();
+
 }
 
 class _FreqEverydayState extends State<FreqEveryday> {
+  final Medication med=Medication();
+
   moveNext()=>Navigator.pushNamed(context, '/often');
 
   final List<String> options = [
@@ -28,6 +39,10 @@ class _FreqEverydayState extends State<FreqEveryday> {
   }
 
 
+
+
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -44,10 +59,10 @@ class _FreqEverydayState extends State<FreqEveryday> {
 
                   children: [
                     IconButton(onPressed: Navigator.of(context).pop,
-                        icon: Icon(Icons.arrow_back_ios_new_outlined) ),
+                        icon: const Icon(Icons.arrow_back_ios_new_outlined,size: 15,) ),
 
 
-                    Text("Frequency",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),
+                    const Text("Frequency",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),
                     ),
                     SizedBox(width: 30,)
 
@@ -75,6 +90,26 @@ class _FreqEverydayState extends State<FreqEveryday> {
                             onTap: (){
                               setState(() {
                                 tappedIndex = index;
+
+                                //put an if statement for the value of each option to happen
+                                //state management with provider
+
+                                if (index== 0){
+                                  med.frequency = 1;
+
+                                }
+                                else if (index== 1){
+                                  med.frequency = 2;
+                                }
+                                else if (index ==2){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ChooseSpecificDays()));
+                                }
+                                else if (index== 3) {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>XDays()));
+
+                                }
+
+
                               });
 
                             },
@@ -93,29 +128,30 @@ class _FreqEverydayState extends State<FreqEveryday> {
                   ),
                 ],
               ),
-              SizedBox(height: 220,),
+              SizedBox(height: 280,),
 
 
 
 
 
               //button
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF33691E),
-                    minimumSize: const Size(350, 60),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13),
-                    ),
-                  ),
-                  onPressed: moveNext,
-
-                  child: const Text(
-                    "Next", style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                ),
+              // ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: const Color(0xFF33691E),
+              //       minimumSize: const Size(350, 60),
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(13),
+              //       ),
+              //     ),
+              //     onPressed: moveNext,
+              //
+              //     child: const Text(
+              //       "Next", style: TextStyle(
+              //         color: Colors.white,
+              //         fontWeight: FontWeight.bold, fontSize: 15),
+              //     ),
+              //   ),
+              LargeButton(title: "Next", move: moveNext)
 
             ],
           )

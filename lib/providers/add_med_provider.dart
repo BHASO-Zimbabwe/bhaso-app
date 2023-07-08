@@ -6,9 +6,12 @@ class AddMedProvider extends ChangeNotifier{
 
   late Medication med;
 
-  Add_Med(){
+  addMed(){
      med = Medication();
+     notifyListeners();
+     //go n initialise this in frequency page
   }
+
 
 
 

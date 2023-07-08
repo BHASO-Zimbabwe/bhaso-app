@@ -2,7 +2,9 @@
 import 'package:bhaso/AuthServices/firebaseAuthMethods.dart';
 import 'package:bhaso/features/add_medication/add_name.dart';
 import 'package:bhaso/features/add_medication/add_type.dart';
-import 'package:bhaso/features/add_medication/freqEveryday.dart';
+import 'package:bhaso/features/add_medication/frequency/freqEveryday.dart';
+import 'package:bhaso/features/add_medication/pillsStock.dart';
+import 'package:bhaso/features/add_medication/setTimeAndDose.dart';
 import 'dart:ui';
 import 'package:bhaso/features/menu/appearance/pages/appearance.dart';
 import 'package:bhaso/features/menu/menu.dart';
@@ -81,7 +83,9 @@ class MyApp extends StatelessWidget {
           "/add_type": (context)=>AddType(),
           "/frequency": (context)=>FreqEveryday(),
           "/often": (context)=>HowOftenDaily(),
-          // "": (context)=>AddType()
+          "/xhours": (context)=>EveryXHours(),
+          "/timeNdDose": (context)=>SetTimeAndDose(),
+          "/pillstock": (context)=>PillStock()
 
         }
       ),
