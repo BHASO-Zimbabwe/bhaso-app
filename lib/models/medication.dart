@@ -13,7 +13,10 @@ class Medication{
   int? often;
   int? inStock;
 
-  Medication({ this.medicationId,this.userId, this.medicationName,this.color,this.medType,  this.prescription,  this.time,  this.frequency,  this.often, this.inStock});
+  Medication({ this.medicationId,
+    this.userId,
+    this.medicationName,
+    this.color,this.medType,  this.prescription,  this.time,  this.frequency,  this.often, this.inStock});
 
   factory Medication.fromJson(Map<String, dynamic> json) => _$MedicationFromJson(json);
 

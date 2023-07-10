@@ -1,3 +1,4 @@
+import 'package:bhaso/features/add_medication/add_name.dart';
 import 'package:bhaso/features/utils/fontsAndColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,7 @@ class Med_Edit extends StatelessWidget {
                           Padding(
                               padding: const EdgeInsets.all(20.0),
                               child: TextButton(onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Med_Edit()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddName()));
                               },
                                 child:Text("Update", style: TextStyle(fontSize: 14, color: Colors.white),) ,
 

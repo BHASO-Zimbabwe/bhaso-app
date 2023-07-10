@@ -1,5 +1,8 @@
 
 
+import 'package:bhaso/features/add_medication/add_name.dart';
+import 'package:bhaso/features/add_medication/xhours.dart';
+import 'package:bhaso/models/medication.dart';
 import 'package:flutter/material.dart';
 
 class HowOftenDaily extends StatefulWidget {
@@ -11,6 +14,9 @@ class HowOftenDaily extends StatefulWidget {
 }
 
 class _HowOftenDailyState extends State<HowOftenDaily> {
+   final Medication med = Medication();
+  moveNext()=>Navigator.pushNamed(context, "/xhours");
+
 
   final List<String> listOfOftens =[
     "One a day",
@@ -42,7 +48,7 @@ class _HowOftenDailyState extends State<HowOftenDaily> {
 
                 children: [
                   IconButton(onPressed: Navigator.of(context).pop,
-                      icon: Icon(Icons.arrow_back_ios_new_outlined) ),
+                      icon: Icon(Icons.arrow_back_ios_new_outlined,size: 15,) ),
 
 
                   Text("How often do you take it",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),
@@ -73,6 +79,22 @@ class _HowOftenDailyState extends State<HowOftenDaily> {
                                 onTap: (){
                                   setState(() {
                                     clickedIndex = index;
+                                     if (index == 0){
+                                       med.often = 1;
+                                     }
+                                     else if (index == 1){
+                                       med.often = 2;
+                                     }
+                                     else if (index == 2){
+                                       med.often = 3;
+                                     }
+                                     else if(index == 3){
+                                       med.often! >= 4  ;
+                                     }
+                                     else if(index == 4){
+                                       Navigator.push(context, MaterialPageRoute(builder: (context)=>EveryXHours()));
+
+                                     }
                                   });
                                 }
 
@@ -85,28 +107,11 @@ class _HowOftenDailyState extends State<HowOftenDaily> {
                   ),
                 ],
               ),
-              SizedBox(height: 315 ,),
+              const SizedBox(height: 315 ,),
 
 
-             Padding(
-               padding: const EdgeInsets.only(left:8.0),
-               child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF33691E),
-                      minimumSize: const Size(350, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(13),
-                      ),
-                    ),
-                    onPressed: (){},
 
-                    child: const Text(
-                      "Next", style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold, fontSize: 15),
-                    ),
-                  ),
-             ),
+              LargeButton(title: "Next", move: moveNext)
 
             ],
           ),
